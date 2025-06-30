@@ -1,0 +1,106 @@
+# 环境变量文件 - 包含敏感信息
+.env
+.env.local
+.env.*.local
+
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 编辑器和IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python虚拟环境
+venv/
+env/
+ENV/
+.env
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 日志文件
+*.log
+logs/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 前端构建文件
+dist/
+build/
+.next/
+out/
+
+# 缓存文件
+.cache/
+.parcel-cache/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.temp
+
+# 本地配置文件
+config.local.*
+.local
+
+# 测试覆盖率报告
+.coverage
+htmlcov/
+.tox/
+.coverage.*
+.cache
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# 备份文件
+*.bak
+*.backup 
