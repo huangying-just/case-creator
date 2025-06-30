@@ -1,0 +1,36 @@
+{
+  "name": "case-creator-frontend",
+  "version": "1.0.0",
+  "description": "案例改编专家 - 前端应用",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_NO_WARNINGS=1 vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "axios": "^1.5.0",
+    "antd": "^5.9.0",
+    "@ant-design/icons": "^5.2.6",
+    "uuid": "^9.0.0",
+    "dayjs": "^1.11.9",
+    "marked": "^9.0.0",
+    "highlight.js": "^11.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/uuid": "^9.0.2",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3"
+  }
+} 

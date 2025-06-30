@@ -1,0 +1,2643 @@
+app:
+  description: 案例改编&出题
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: nbut-案例改编
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.0.13@9caa0421b5519db036aaccdbf1980d1071550767d6c59e9d9388dd386a92e9f6
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/google:0.0.8@3efcf55ffeef9d0f77715e0afb23534952ae0cb385c051d0637e86d71199d1a6
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/wecom:0.0.2@13392834d29569db50915818a9bc93dae67260b29a98885945ecc35dc0e8aab4
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/brave:0.0.2@2b9a142648464a10ea7d15069a2313fc026fef5bc301f17ec70ebffcf97546e2
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: if-else
+      id: 1730788211764-source-1730796332888-target
+      source: '1730788211764'
+      sourceHandle: source
+      target: '1730796332888'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730796332888-true-1730795882682-target
+      source: '1730796332888'
+      sourceHandle: 'true'
+      target: '1730795882682'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 1730795882682-source-1730943391321-target
+      source: '1730795882682'
+      sourceHandle: source
+      target: '1730943391321'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 1730880430237-source-1730943526326-target
+      source: '1730880430237'
+      sourceHandle: source
+      target: '1730943526326'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730943526326-true-17308836187640-target
+      source: '1730943526326'
+      sourceHandle: 'true'
+      target: '17308836187640'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730883541388-true-1730963549223-target
+      source: '1730883541388'
+      sourceHandle: 'true'
+      target: '1730963549223'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 17308836187640-source-1730883541388-target
+      source: '17308836187640'
+      sourceHandle: source
+      target: '1730883541388'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730883541388-252ee0ea-c337-488a-b5c2-1037281b9b1d-17309641157620-target
+      source: '1730883541388'
+      sourceHandle: 252ee0ea-c337-488a-b5c2-1037281b9b1d
+      target: '17309641157620'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730883541388-false-17309641384060-target
+      source: '1730883541388'
+      sourceHandle: 'false'
+      target: '17309641384060'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730943391321-true-1730797661439-target
+      source: '1730943391321'
+      sourceHandle: 'true'
+      target: '1730797661439'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: if-else
+      id: 1730797661439-source-1730943651455-target
+      source: '1730797661439'
+      sourceHandle: source
+      target: '1730943651455'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730943651455-true-1730874217739-target
+      source: '1730943651455'
+      sourceHandle: 'true'
+      target: '1730874217739'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730943651455-ae26be74-3ad4-40c5-b662-c24115d5863d-17309651702670-target
+      source: '1730943651455'
+      sourceHandle: ae26be74-3ad4-40c5-b662-c24115d5863d
+      target: '17309651702670'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: llm
+      id: 1730943651455-false-17309651917020-target
+      source: '1730943651455'
+      sourceHandle: 'false'
+      target: '17309651917020'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: tool
+      id: 1730796332888-false-1736755840561-target
+      source: '1730796332888'
+      sourceHandle: 'false'
+      target: '1736755840561'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: tool
+      id: 1736755840561-fail-branch-1734329818710-target
+      source: '1736755840561'
+      sourceHandle: fail-branch
+      target: '1734329818710'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 1734329818710-source-1730880430237-target
+      source: '1734329818710'
+      sourceHandle: source
+      target: '1730880430237'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: llm
+      id: 1736755840561-source-1730880430237-target
+      source: '1736755840561'
+      sourceHandle: source
+      target: '1730880430237'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: tool
+      id: 1730943391321-false-1741671123185-target
+      source: '1730943391321'
+      sourceHandle: 'false'
+      target: '1741671123185'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 1741671123185-source-1730943460006-target
+      source: '1741671123185'
+      sourceHandle: source
+      target: '1730943460006'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 1730874217739-source-17416718645690-target
+      source: '1730874217739'
+      sourceHandle: source
+      target: '17416718645690'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416718645690-source-1730874279111-target
+      source: '17416718645690'
+      sourceHandle: source
+      target: '1730874279111'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 17309651702670-source-17416719266280-target
+      source: '17309651702670'
+      sourceHandle: source
+      target: '17416719266280'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416719266280-source-1730965205794-target
+      source: '17416719266280'
+      sourceHandle: source
+      target: '1730965205794'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 17309651917020-source-17416719534490-target
+      source: '17309651917020'
+      sourceHandle: source
+      target: '17416719534490'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416719534490-source-1730965234578-target
+      source: '17416719534490'
+      sourceHandle: source
+      target: '1730965234578'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 1730963549223-source-17416720801650-target
+      source: '1730963549223'
+      sourceHandle: source
+      target: '17416720801650'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416720801650-source-1730883855515-target
+      source: '17416720801650'
+      sourceHandle: source
+      target: '1730883855515'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 17309641157620-source-17416721196980-target
+      source: '17309641157620'
+      sourceHandle: source
+      target: '17416721196980'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416721196980-source-1730964154239-target
+      source: '17416721196980'
+      sourceHandle: source
+      target: '1730964154239'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: tool
+      id: 17309641384060-source-17416721466890-target
+      source: '17309641384060'
+      sourceHandle: source
+      target: '17416721466890'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416721466890-source-1730964159699-target
+      source: '17416721466890'
+      sourceHandle: source
+      target: '1730964159699'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: if-else
+        targetType: tool
+      id: 1730943526326-false-17416721724410-target
+      source: '1730943526326'
+      sourceHandle: 'false'
+      target: '17416721724410'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: tool
+        targetType: end
+      id: 17416721724410-source-1730943613874-target
+      source: '17416721724410'
+      sourceHandle: source
+      target: '1730943613874'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: 案例关联知识内容
+          max_length: 48000
+          options: []
+          required: true
+          type: paragraph
+          variable: knowledgePoints
+        - label: 学习目标
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: learningObjectives
+        - label: 是否生成题目
+          max_length: 48
+          options:
+          - 是
+          - 否
+          required: true
+          type: select
+          variable: yes_or_no
+        - label: 题目类型及数量（如单选题3道、多选题3道、判断题4道、思考题2道）
+          max_length: 256
+          options:
+          - 单项选择题
+          - 多项选择题
+          - 判断题
+          - 思考题
+          - 其他（综合以上题型）
+          required: true
+          type: text-input
+          variable: questionType
+        - label: 题目难度等级
+          max_length: 48
+          options:
+          - 初级
+          - 中级
+          - 高级
+          required: false
+          type: select
+          variable: difficultyLevel
+        - label: 案例场景
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: caseScenario
+        - label: 案例参考材料
+          max_length: 10240
+          options: []
+          required: false
+          type: paragraph
+          variable: caseMaterials
+      height: 245
+      id: '1730788211764'
+      position:
+        x: 30
+        y: 322
+      positionAbsolute:
+        x: 30
+        y: 322
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 43b45b27-59cc-4410-adff-d56a5bec1a3b
+          role: system
+          text: '角色：你是一位精通{{#1730788211764.knowledgePoints#}}的专家，同时熟悉{{#1730788211764.caseScenario#}}情景，擅长做案例撰写和改编。
+
+            职责：请你基于场景{{#1730788211764.caseScenario#}}，结合知识点{{#1730788211764.knowledgePoints#}}以及考核目标{{#1730788211764.learningObjectives#}}改编这个案例{{#1730788211764.caseMaterials#}}。
+
+            案例要求：
+
+            1. 背景与情境设置
+
+            提示：描述背景和案例的总体情境，包括公司信息、行业概况和主要挑战。背景要简洁但信息完整，能让学习者快速理解情境的关键因素。
+
+            示例：“请用3-5句描述一个物流行业的背景情境，包括公司名称、所在行业、规模、市场特点以及当前的运营挑战。”
+
+            2. 问题引导
+
+            提示：概述案例中的核心问题，并明确指出困扰该组织的决策或战略难题，保持中立的描述以鼓励学习者自主分析。
+
+            示例：“请以中立的语气描述案例中的主要问题，突出该组织面临的战略决策难题，如物流优化或供应链重组等。”
+
+            3. 关键数据与事实
+
+            提示：给出与问题分析和决策相关的关键数据和事实，例如公司财务状况、市场动态、运营瓶颈等，使内容具备逻辑支持。
+
+            示例：“提供与决策相关的关键数据，包括公司运营的瓶颈、物流成本、市场份额或关键绩效指标，以支持学习者的分析和决策。”
+
+            4. 选择路径和解决方案
+
+            提示：列出多种可行的方案或行动路径，使学习者可以从多个角度进行对比分析，培养批判性思维。
+
+
+            5. 预期结果和影响
+
+
+            案例主题：结合改编的案例起一个吸引人的主题；
+
+            案例正文：包括案例背景、情境设定、核心问题、决策困境与挑战、行动计划与战略、战略决策、风险与反思以及结论。（不需要分条分点罗列，内容包括以上部分即可，要求逻辑清晰语言表述连贯，不要输出”背景与情景设置""问题引导""关键数据““这一案例展示了。。。”等无关案例的语言）
+
+            '
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: 有材料改编案例
+        type: llm
+        variables: []
+        vision:
+          configs:
+            detail: high
+          enabled: false
+      height: 117
+      id: '1730795882682'
+      position:
+        x: 636
+        y: 322
+      positionAbsolute:
+        x: 636
+        y: 322
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 091d1460-b9dc-45be-982d-63c758226085
+            value: ''
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - caseMaterials
+          id: 'true'
+          logical_operator: and
+        conditions:
+        - comparison_operator: not empty
+          id: '1730796336430'
+          value: ''
+          variable_selector:
+          - '1730788211764'
+          - caseScenario
+        desc: ''
+        logical_operator: and
+        selected: false
+        title: 条件分支
+        type: if-else
+      height: 125
+      id: '1730796332888'
+      position:
+        x: 333
+        y: 322
+      positionAbsolute:
+        x: 333
+        y: 322
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1730795882682'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: a709f2fe-688b-4040-81e0-01b23aacf83e
+          role: system
+          text: "#角色说明：你是一个出题专家，帮助根据提供的案例设计{{#context#}}生成考试题目。请设计一组复杂的选择题，每道题目提供四个选项，其中至少两个选项具有较强的混淆性，避免明显的正确答案。题目内容涉及{{#1730788211764.knowledgePoints#}}。题目应考察理解力、分析力和应用能力，通过具体情景描述来区分选项的合理性和误导性。\n\
+            \n2. **生成要求（与学习目标一致）：**\n   - 生成{{#1730788211764.questionType#}}所包含的题目类型，按照{{#1730788211764.questionType#}}顺序生成固定数量的题目。如“单选题\
+            \ 3 道 多选题 2 道 判断题 3 道”要求先生成3道单选题，再生成2道多选题，最后生成3道判断题，请严格按照要求输出的题目类型和数量生成。\n\
+            \   - 单选题、多选题每道题目应包含**四个选项**（A、B、C、D），并标明**正确答案**。\n  - 多选题应该包含多个正确答案，答案呈现形式如“AB”\"\
+            ABC\"\"ABCF\"等\n  - 判断题应包含“正确”“错误”两个选项，并标明**正确答案**。\n   - 每个题目后附带**答案解析**，明确解释正确答案并说明为什么其他选项不合适。\n\
+            \   \n3. **题目要求（相关性与学习目标高度契合）：**\n   - 确保每道题目与{{#1730788211764.knowledgePoints#}}等知识点密切相关。\n\
+            \   - 题目内容必须能够帮助学生达到**学习目标**，并且支持**教学评估**。\n   - 提问方式：生成围绕专业实施类知识的实际应用题目，而不仅仅是基于案例的分析题目。\n\
+            \   - 提问表述：题目题干都以陈述句的方式提出，例如“在选择外包方案时，XYZ制造公司应该优先考虑的因素是（）。“\n   - 难度递进：所生成的题目，由简单到复杂，如第一题简单，逐渐增加难度。\n\
+            \   - 专业性：每道题都需要考察学生对专业领域（案例相关知识点{{#1730788211764.knowledgePoints#}}）的实际理解，并能够应用于解决实际问题。\n\
+            \   - 防止简单复述：避免设计只需要学生重复案例内容的题目，确保问题具有一定的知识性挑战。\n   - 实用性：题目应与实际操作密切相关，关注行业标准、技术应用、管理实践等内容。\n\
+            4. **时限（可在课堂或课后测评时使用）：**\n\n\n---\n\n**输出格式：**\n- 每道题目包含**四个选项**（A、B、C、D），并明确标注正确答案。\n\
+            - 每个答案选项后附带**简洁明了的答案解释**。\n---\n\n**示例输出：**\n\n1. 以下能减少物流碳排放的方法有（）。\n\
+            A. 使用电动送货车  \nB. 使用柴油卡车  \nC. 增加包装材料使用  \nD. 扩展配送路线  \n正确答案：A  \n解释：电动送货车排放量更低，能够有效减少碳排放。\n\
+            2.  给定以下物流数据（插入关于运输排放、车队效率等的详细数据），最能在下一年减少30%的碳排放的组合措施是（）。  \nA. 在所有路线部署电动送货车\
+            \  \nB. 优化配送路线以减少里程  \nC. 实施碳补偿计划  \nD. 减少配送中心数量，整合运输路线  \n正确答案：AB  \n\
+            解释：部署电动送货车和优化路线能够减少排放，而碳补偿计划和减少配送中心数量的效果较为间接。\n3. 供应链数字化转型能够有效提升供应链协同效率和透明度，减少信息孤岛，增强上下游企业的互联互通。\n\
+            正确\n错误\n正确答案：正确\n解释：供应链数字化转型确实能够显著提升供应链的协同效率和透明度，减少信息孤岛，并增强上下游企业之间的互联互通。\n\
+            \n---\n\n**输出标准：**\n- 确保题目针对{{#1730788211764.knowledgePoints#}}的核心概念，并与学生的{{#1730788211764.learningObjectives#}}紧密对接。\
+            \  \n- 提供**简明的答案解析**，帮助学生更好地理解每个选择的背景和原因。\n\n\n"
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: 生成题目
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '1730797661439'
+      position:
+        x: 1242
+        y: 450
+      positionAbsolute:
+        x: 1242
+        y: 450
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1730797661439'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: c4fcd8d1-142d-4343-b0ad-1a90c86337c7
+          role: system
+          text: '{{#context#}}题目太简单了，请替换部分题目，提升题目复杂读和难度，要求选项之间具有混淆度，不能是一眼就能看出答案的；要求其中30%的题目不能是与案例{{#1730795882682.text#}}中企业相关联不能在案例中直接找到答案的，可以围绕{{#1730788211764.knowledgePoints#}}的相关知识和{{#1730788211764.learningObjectives#}}进行拓展设计，聚焦于知识点的基本概念、定义、常识，学生应该能够通过记忆和识别基础知识来回答，其余70%与案例相关，可以从案例中获取答案的。
+
+            保证题目类型和数量严格按照{{#1730788211764.questionType#}}生成，同时所有题目不能存在重复。
+
+            #题目输出格式
+
+            - 每道选择题目包含**四个选项**（A、B、C、D），并明确标注正确答案。
+
+            - 每个判断题目包含“正确”“错误”俩个选项，并明确标注正确答案。
+
+            - 每个答案选项后附带**简洁明了的答案解释**。
+
+            不要输出无关的信息，只输出题目相关信息。
+
+
+            '
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: LLM 初
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '1730874217739'
+      position:
+        x: 1856.6648780958672
+        y: 450
+      positionAbsolute:
+        x: 1856.6648780958672
+        y: 450
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730795882682'
+          - text
+          variable: text1
+        - value_selector:
+          - '1730874217739'
+          - text
+          variable: text2
+        selected: false
+        title: 结束 2
+        type: end
+      height: 115
+      id: '1730874279111'
+      position:
+        x: 2494.9557804288015
+        y: 454
+      positionAbsolute:
+        x: 2494.9557804288015
+        y: 454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1734329818710'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: eb57ea65-6c23-4e15-95a8-3e9839dcb2be
+          role: system
+          text: '角色：你是一位精通{{#1730788211764.knowledgePoints#}}的专家，同时熟悉{{#1730788211764.caseScenario#}}情景，擅长做案例撰写和改编。
+
+            职责：请你基于场景{{#1730788211764.caseScenario#}}，结合搜索到的{{#context#}}，知识内容{{#1730788211764.knowledgePoints#}}以及考核目标{{#1730788211764.learningObjectives#}}改编一则相关性最高的案例。
+
+            案例要求：
+
+            1. 背景与情境设置
+
+            提示：描述背景和案例的总体情境，包括公司信息、行业概况和主要挑战。背景要简洁但信息完整，能让学习者快速理解情境的关键因素。
+
+            示例：“请用3-5句描述一个物流行业的背景情境，包括公司名称、所在行业、规模、市场特点以及当前的运营挑战。”
+
+            2. 问题引导
+
+            提示：概述案例中的核心问题，并明确指出困扰该组织的决策或战略难题，保持中立的描述以鼓励学习者自主分析。
+
+            示例：“请以中立的语气描述案例中的主要问题，突出该组织面临的战略决策难题，如物流优化或供应链重组等。”
+
+            3. 关键数据与事实
+
+            提示：给出与问题分析和决策相关的关键数据和事实，例如公司财务状况、市场动态、运营瓶颈等，使内容具备逻辑支持。
+
+            示例：“提供与决策相关的关键数据，包括公司运营的瓶颈、物流成本、市场份额或关键绩效指标，以支持学习者的分析和决策。”
+
+            4. 选择路径和解决方案
+
+            提示：列出多种可行的方案或行动路径，使学习者可以从多个角度进行对比分析，培养批判性思维。
+
+
+            5. 预期结果和影响
+
+
+            案例主题：结合改编的案例起一个吸引人的主题；
+
+            案例正文：包括案例背景、情境设定、核心问题、决策困境与挑战、行动计划与战略、战略决策、风险与反思以及结论。（不需要分条分点罗列，内容包括以上部分即可，要求逻辑清晰语言表述连贯）
+
+            '
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: 根据搜索材料生成案例
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '1730880430237'
+      position:
+        x: 1242
+        y: 818
+      positionAbsolute:
+        x: 1242
+        y: 818
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 9cc5f966-54ce-4106-b2ee-74834f528121
+            value: 初级
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - difficultyLevel
+          id: 'true'
+          logical_operator: and
+        - case_id: 252ee0ea-c337-488a-b5c2-1037281b9b1d
+          conditions:
+          - comparison_operator: is
+            id: de370202-8d03-4fc9-a939-9a2fa65b0397
+            value: 中级
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - difficultyLevel
+          id: 252ee0ea-c337-488a-b5c2-1037281b9b1d
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 题目难度等级（1）
+        type: if-else
+      height: 173
+      id: '1730883541388'
+      position:
+        x: 2148
+        y: 898
+      positionAbsolute:
+        x: 2148
+        y: 898
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1730880430237'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: a709f2fe-688b-4040-81e0-01b23aacf83e
+          role: system
+          text: "#角色说明：你是一个教育AI助手，帮助根据提供的案例设计{{#context#}}生成考试题目，\n题目类型及数量要求参考{{#1730788211764.questionType#}}\n\
+            整体输出要求：\n单选题：\n多选题：\n判断题：\n#题目输出格式\n- 每道题目包含**四个选项**（A、B、C、D），并明确标注正确答案。\n\
+            - 每个答案选项后附带**简洁明了的答案解释**。\n#示例输出\n1.  **题目:** “以下哪项是减少物流碳排放的方法？”  \n \
+            \    - A. 使用电动送货车  \n     - B. 使用柴油卡车  \n     - C. 增加包装材料使用  \n     -\
+            \ D. 扩展配送路线  \n   - **正确答案:** A  \n   - **解释:** 电动送货车排放量更低，能够有效减少碳排放。\n\
+            2.  - **题目:** “给定以下物流数据（插入关于运输排放、车队效率等的详细数据），哪个组合措施最能在下一年减少30%的碳排放？” \
+            \ \n     - A. 在所有路线部署电动送货车  \n     - B. 优化配送路线以减少里程  \n     - C. 实施碳补偿计划\
+            \  \n     - D. 减少配送中心数量，整合运输路线  \n   - **正确答案:** A, B  \n   - **解释:**\
+            \ 部署电动送货车和优化路线能够减少排放，而碳补偿计划和减少配送中心数量的效果较为间接。\n3. - **题目:**“供应链数字化转型能够有效提升供应链协同效率和透明度，减少信息孤岛，增强上下游企业的互联互通。”\
+            \  \n   - **正确答案:** 正确\n   - **解释:** 供应链数字化转型确实能够显著提升供应链的协同效率和透明度，减少信息孤岛，并增强上下游企业之间的互联互通。\n\
+            \n\n\n\n"
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: 生成题目（1）
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '17308836187640'
+      position:
+        x: 1845
+        y: 867.1710529852758
+      positionAbsolute:
+        x: 1845
+        y: 867.1710529852758
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730880430237'
+          - text
+          variable: text1
+        - value_selector:
+          - '1730963549223'
+          - text
+          variable: text
+        selected: false
+        title: 结束 3
+        type: end
+      height: 115
+      id: '1730883855515'
+      position:
+        x: 3113.542585114072
+        y: 933.702603290006
+      positionAbsolute:
+        x: 3113.542585114072
+        y: 933.702603290006
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: cd907833-8f70-4518-9d63-e0f655a57710
+            value: 是
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - yes_or_no
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否生成题目
+        type: if-else
+      height: 125
+      id: '1730943391321'
+      position:
+        x: 939
+        y: 322
+      positionAbsolute:
+        x: 939
+        y: 322
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730795882682'
+          - text
+          variable: text
+        selected: false
+        title: 结束 1
+        type: end
+      height: 90
+      id: '1730943460006'
+      position:
+        x: 1907.9609768282546
+        y: 284.2233830370834
+      positionAbsolute:
+        x: 1907.9609768282546
+        y: 284.2233830370834
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 1a1efd78-9f2c-4c2f-b963-007d14d3a6fc
+            value: 是
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - yes_or_no
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 是否生成题目（1）
+        type: if-else
+      height: 125
+      id: '1730943526326'
+      position:
+        x: 1542
+        y: 786
+      positionAbsolute:
+        x: 1542
+        y: 786
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730880430237'
+          - text
+          variable: text
+        selected: false
+        title: 结束 5
+        type: end
+      height: 90
+      id: '1730943613874'
+      position:
+        x: 2148
+        y: 1130.0928117793
+      positionAbsolute:
+        x: 2148
+        y: 1130.0928117793
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: a2b4359f-445b-4bf7-b57c-cefb67b1beb5
+            value: 初级
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - difficultyLevel
+          id: 'true'
+          logical_operator: and
+        - case_id: ae26be74-3ad4-40c5-b662-c24115d5863d
+          conditions:
+          - comparison_operator: is
+            id: 4d07b69b-a8a0-4ed2-9df4-21a353ad11fa
+            value: 中级
+            varType: string
+            variable_selector:
+            - '1730788211764'
+            - difficultyLevel
+          id: ae26be74-3ad4-40c5-b662-c24115d5863d
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 题目难度等级
+        type: if-else
+      height: 173
+      id: '1730943651455'
+      position:
+        x: 1545
+        y: 454
+      positionAbsolute:
+        x: 1545
+        y: 454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 70545f82-c48d-49af-b32d-18922b786a61
+          role: system
+          text: '{{#context#}}题目太简单了，请提升题目难度，要求其中30%的题目不能是直接可以从案例{{#1730880430237.text#}}中能直接找到答案的，但是需要围绕{{#1730788211764.knowledgePoints#}}的相关知识进行拓展设计。
+
+            保证题目类型和数量严格按照{{#1730788211764.questionType#}}生成。
+
+            #题目输出格式
+
+            - 每道选择题目包含**四个选项**（A、B、C、D），并明确标注正确答案。
+
+            - 每个判断题目包含“正确”“错误”俩个选项，并明确标注正确答案。
+
+            - 每个答案选项后附带**简洁明了的答案解释**。
+
+            不要输出无关的信息，只输出题目相关信息。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: LLM 初（1）
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '1730963549223'
+      position:
+        x: 2451
+        y: 945
+      positionAbsolute:
+        x: 2451
+        y: 945
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 70545f82-c48d-49af-b32d-18922b786a61
+          role: system
+          text: '{{#context#}}题目太简单了，请替换部分题目，提升题目复杂读和难度，要求选项之间具有混淆度，不能是一眼就能看出答案的；要求其中50%的题目不能是直接可以从案例{{#1730880430237.text#}}中能直接找到答案的，但是需要围绕{{#1730788211764.knowledgePoints#}}{{#1730788211764.learningObjectives#}}的相关知识进行拓展设计。
+
+            保证题目类型和数量严格按照{{#1730788211764.questionType#}}生成。
+
+            #题目输出格式
+
+            - 每道选择题目包含**四个选项**（A、B、C、D），并明确标注正确答案。
+
+            - 每个判断题目包含“正确”“错误”俩个选项，并明确标注正确答案。
+
+            - 每个答案选项后附带**简洁明了的答案解释**。
+
+            不要输出无关的信息，只输出题目相关信息。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: LLM 中 (1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '17309641157620'
+      position:
+        x: 2451
+        y: 1099
+      positionAbsolute:
+        x: 2451
+        y: 1099
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 70545f82-c48d-49af-b32d-18922b786a61
+          role: system
+          text: '{{#context#}}题目太简单了，请提升题目难度。替换其中70%的题目，要求分析知识点，围绕相关知识点{{#1730788211764.knowledgePoints#}}{{#1730788211764.learningObjectives#}}出题。
+
+            保证题目类型和数量严格按照{{#1730788211764.questionType#}}生成。
+
+            #题目输出格式
+
+            - 每道选择题目包含**四个选项**（A、B、C、D），并明确标注正确答案。
+
+            - 每个判断题目包含“正确”“错误”俩个选项，并明确标注正确答案。
+
+            - 每个答案选项后附带**简洁明了的答案解释**。
+
+            不要输出无关的信息，只输出题目相关信息。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: LLM 高(1)
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '17309641384060'
+      position:
+        x: 2451
+        y: 1253
+      positionAbsolute:
+        x: 2451
+        y: 1253
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730880430237'
+          - text
+          variable: text1
+        - value_selector:
+          - '17309641157620'
+          - text
+          variable: text2
+        selected: false
+        title: 结束 6
+        type: end
+      height: 115
+      id: '1730964154239'
+      position:
+        x: 3125.0295686640425
+        y: 1106.0817769699586
+      positionAbsolute:
+        x: 3125.0295686640425
+        y: 1106.0817769699586
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730880430237'
+          - text
+          variable: text1
+        - value_selector:
+          - '17309641384060'
+          - text
+          variable: '2'
+        selected: false
+        title: 结束 7
+        type: end
+      height: 115
+      id: '1730964159699'
+      position:
+        x: 3125.0295686640425
+        y: 1253
+      positionAbsolute:
+        x: 3125.0295686640425
+        y: 1253
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1730797661439'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: c4fcd8d1-142d-4343-b0ad-1a90c86337c7
+          role: system
+          text: " \n{{#context#}}题目太简单了，请替换部分题目，提升题目复杂读和难度，要求其中50%的题目不能是与案例{{#1730795882682.text#}}中企业相关联不能在案例中直接找到答案的，但是需要围绕{{#1730788211764.knowledgePoints#}}的相关知识进行拓展设计，考察学生将知识点应用于实际情境的能力，要求分析或选择有效的解决方案。其余50%与案例相关，可以从案例中获取答案的。\n\
+            保证题目类型和数量严格按照{{#1730788211764.questionType#}}生成，同时所有题目不能存在重复。\n#检查题目输出格式\n\
+            - 每道选择题目包含**四个选项**（A、B、C、D），并明确标注正确答案。\n- 检查调整题目的生成顺序，严格按照{{#1730788211764.questionType#}}呈现。\n\
+            - 每个判断题目包含“正确”“错误”俩个选项，并明确标注正确答案。\n - 提问表述：选择题题干都以陈述句的方式提出，例如“在选择外包方案时，XYZ制造公司应该优先考虑的因素是（）。“ “企业在与第三方物流供应商合作时，通常需要关注的关键绩效指标有（）。”即把答案放在括号里，以句号结束的提问方式；禁止在题干中出现如下表述“哪”“？”。判断题题干要求为完整的句子表述\n\
+            。\n- 每个题目在所有选项后输出**简洁明了的答案解释**。\n不要输出无关的信息，只输出题目相关信息。\n\n\n "
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: LLM 中
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 117
+      id: '17309651702670'
+      position:
+        x: 1845
+        y: 596.5130164500296
+      positionAbsolute:
+        x: 1845
+        y: 596.5130164500296
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1730797661439'
+          - text
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4o-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: c4fcd8d1-142d-4343-b0ad-1a90c86337c7
+          role: system
+          text: "\n{{#context#}}题目太简单了，请替换部分题目，提升题目复杂读和难度，要求其中70%的题目不能是与案例{{#1730795882682.text#}}中企业相关联不能在案例中直接找到答案的，但是需要围绕{{#1730788211764.knowledgePoints#}}的相关知识进行拓展设计，题目涉及多种复杂因素（如数据、数据分析、实际操作的权衡），要求高级题目至少出一道选择题涉及公式计算等，要求学生将多个概念和知识点结合使用，不能拘泥于案例，要做适当的知识拓展延申考察\
+            \ 考察学生将知识点应用于实际情境的能力，要求分析或选择有效的解决方案。其余30%与案例相关，可以从案例中获取答案的。\n保证题目类型和数量严格按照{{#1730788211764.questionType#}}生成，同时所有题目不能存在重复。\n\
+            #题目输出格式\n- 每道选择题目包含**四个选项**（A、B、C、D），并明确标注正确答案。\n- 每个判断题目包含“正确”“错误”俩个选项，并明确标注正确答案。\n\
+            - 每个答案选项后附带**简洁明了的答案解释**。\n不要输出无关的信息，只输出题目相关信息。\n\n\n \n "
+        selected: false
+        title: LLM 高
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '17309651917020'
+      position:
+        x: 1856.6648780958672
+        y: 726.1026478885517
+      positionAbsolute:
+        x: 1856.6648780958672
+        y: 726.1026478885517
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730795882682'
+          - text
+          variable: text1
+        - value_selector:
+          - '17309651702670'
+          - text
+          variable: text2
+        selected: false
+        title: 结束 8
+        type: end
+      height: 115
+      id: '1730965205794'
+      position:
+        x: 2513.9886801790635
+        y: 625.2304753249556
+      positionAbsolute:
+        x: 2513.9886801790635
+        y: 625.2304753249556
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1730795882682'
+          - text
+          variable: text1
+        - value_selector:
+          - '17309651917020'
+          - text
+          variable: text2
+        selected: false
+        title: 结束 9
+        type: end
+      height: 115
+      id: '1730965234578'
+      position:
+        x: 2487.568618014131
+        y: 760.851301645003
+      positionAbsolute:
+        x: 2487.568618014131
+        y: 760.851301645003
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        provider_id: brave
+        provider_name: brave
+        provider_type: builtin
+        selected: false
+        title: BraveSearch
+        tool_configurations:
+          ensure_ascii: 1
+        tool_label: BraveSearch
+        tool_name: brave_search
+        tool_parameters:
+          count:
+            type: constant
+            value: 1
+          query:
+            type: mixed
+            value: '{{#1730788211764.knowledgePoints#}}{{#1730788211764.caseScenario#}}最新案例'
+        type: tool
+      height: 90
+      id: '1734329818710'
+      position:
+        x: 895.862344476901
+        y: 1006.3272390553122
+      positionAbsolute:
+        x: 895.862344476901
+        y: 1006.3272390553122
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        error_strategy: fail-branch
+        provider_id: google
+        provider_name: google
+        provider_type: builtin
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: 谷歌搜索
+        tool_configurations: {}
+        tool_label: 谷歌搜索
+        tool_name: google_search
+        tool_parameters:
+          query:
+            type: mixed
+            value: '{{#1730788211764.knowledgePoints#}}{{#1730788211764.caseScenario#}}最新案例'
+        type: tool
+      height: 117
+      id: '1736755840561'
+      position:
+        x: 636
+        y: 808
+      positionAbsolute:
+        x: 636
+        y: 808
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730795882682.text#}}'
+        type: tool
+      height: 115
+      id: '1741671123185'
+      position:
+        x: 1607.9609768282546
+        y: 284.2233830370834
+      positionAbsolute:
+        x: 1607.9609768282546
+        y: 284.2233830370834
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息 (1)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730795882682.text#}}
+
+              {{#1730874217739.text#}}'
+        type: tool
+      height: 115
+      id: '17416718645690'
+      position:
+        x: 2148
+        y: 454
+      positionAbsolute:
+        x: 2148
+        y: 454
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息 (2)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730795882682.text#}}
+
+              {{#17309651702670.text#}}'
+        type: tool
+      height: 115
+      id: '17416719266280'
+      position:
+        x: 2191.5036773914394
+        y: 625.2304753249556
+      positionAbsolute:
+        x: 2191.5036773914394
+        y: 625.2304753249556
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息 (3)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730795882682.text#}}
+
+              {{#17309651917020.text#}}'
+        type: tool
+      height: 115
+      id: '17416719534490'
+      position:
+        x: 2196.245330909875
+        y: 760.851301645003
+      positionAbsolute:
+        x: 2196.245330909875
+        y: 760.851301645003
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息 (4)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730880430237.text#}}
+
+              {{#1730963549223.text#}}'
+        type: tool
+      height: 115
+      id: '17416720801650'
+      position:
+        x: 2768.1502515999514
+        y: 945
+      positionAbsolute:
+        x: 2768.1502515999514
+        y: 945
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息 (5)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730880430237.text#}}
+
+              {{#17309641157620.text#}}'
+        type: tool
+      height: 115
+      id: '17416721196980'
+      position:
+        x: 2761.2580614699687
+        y: 1091.460141714492
+      positionAbsolute:
+        x: 2761.2580614699687
+        y: 1091.460141714492
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: true
+        title: 发送群消息 (6)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730880430237.text#}}
+
+              {{#17309641384060.text#}}'
+        type: tool
+      height: 115
+      id: '17416721466890'
+      position:
+        x: 2761.2580614699687
+        y: 1253
+      positionAbsolute:
+        x: 2761.2580614699687
+        y: 1253
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: form
+          human_description:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          label:
+            en_US: Wecom Group bot webhook key
+            ja_JP: Wecom Group bot webhook key
+            pt_BR: Wecom Group bot webhook key
+            zh_Hans: 群机器人webhook的key
+          llm_description: ''
+          max: null
+          min: null
+          name: hook_key
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: secret-input
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Content to sent to the group.
+            ja_JP: Content to sent to the group.
+            pt_BR: Content to sent to the group.
+            zh_Hans: 群消息文本
+          label:
+            en_US: content
+            ja_JP: content
+            pt_BR: content
+            zh_Hans: 消息内容
+          llm_description: Content of the message
+          max: null
+          min: null
+          name: content
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: text
+          form: form
+          human_description:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          label:
+            en_US: Wecom Group bot message type
+            ja_JP: Wecom Group bot message type
+            pt_BR: Wecom Group bot message type
+            zh_Hans: 群机器人webhook的消息类型
+          llm_description: ''
+          max: null
+          min: null
+          name: message_type
+          options:
+          - label:
+              en_US: Text
+              ja_JP: Text
+              pt_BR: Text
+              zh_Hans: 文本
+            value: text
+          - label:
+              en_US: Markdown
+              ja_JP: Markdown
+              pt_BR: Markdown
+              zh_Hans: Markdown
+            value: markdown
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: select
+        params:
+          content: ''
+          hook_key: ''
+          message_type: ''
+        provider_id: langgenius/wecom/wecom
+        provider_name: langgenius/wecom/wecom
+        provider_type: builtin
+        selected: false
+        title: 发送群消息 (7)
+        tool_configurations:
+          hook_key: 97e05517-75d2-4f77-b062-4a4825ab4578
+          message_type: text
+        tool_label: 发送群消息
+        tool_name: wecom_group_bot
+        tool_parameters:
+          content:
+            type: mixed
+            value: 'nbut-用户：{{#sys.user_id#}}
+
+              知识内容：{{#1730788211764.knowledgePoints#}}
+
+              学习目标：{{#1730788211764.learningObjectives#}}
+
+              是否生成题目：{{#1730788211764.yes_or_no#}}
+
+              题目类型：{{#1730788211764.questionType#}}
+
+              题目难度：{{#1730788211764.difficultyLevel#}}
+
+              案例场景：{{#1730788211764.caseScenario#}}
+
+              材料：{{#1730788211764.caseMaterials#}}
+
+
+              回答：{{#1730880430237.text#}}
+
+              '
+        type: tool
+      height: 115
+      id: '17416721724410'
+      position:
+        x: 1836.4883942891267
+        y: 1122.0817769699586
+      positionAbsolute:
+        x: 1836.4883942891267
+        y: 1122.0817769699586
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: 75.13492552786624
+      y: -47.083158173728634
+      zoom: 0.5743491774985177

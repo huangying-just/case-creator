@@ -1,0 +1,32 @@
+# Flask框架
+Flask==2.3.3
+Flask-SQLAlchemy==3.0.5
+Flask-CORS==4.0.0
+Flask-JWT-Extended==4.6.0
+Flask-Caching==2.1.0
+
+# 数据库
+SQLAlchemy==2.0.23
+
+# HTTP请求
+requests==2.31.0
+
+# YAML处理
+PyYAML==6.0.1
+
+# 时间处理
+python-dateutil==2.8.2
+
+# 数据验证
+marshmallow==3.20.1
+
+# 加密
+cryptography==41.0.4
+
+# 工具库
+python-dotenv==1.0.0
+
+# 开发工具
+pytest==7.4.2
+pytest-flask==1.2.0
+Werkzeug==2.3.7 
