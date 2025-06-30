@@ -103,19 +103,55 @@ fi
 # 激活虚拟环境并安装依赖
 echo "📦 安装后端依赖..."
 cd backend
-source venv/bin/activate
-pip install -r requirements.txt
+
+# 检查是否在容器环境中
+if [ -f "/.dockerenv" ] || [ -n "$DOCKER_ENV" ]; then
+    echo "   检测到Docker容器环境"
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+    echo "   项目根目录: $PROJECT_ROOT"
+    cd "$PROJECT_ROOT/backend"
+fi
+
+# 激活虚拟环境
+if [ -f "venv/bin/activate" ]; then
+    source venv/bin/activate
+    echo "   虚拟环境已激活"
+    # 升级pip并安装依赖
+    pip install --upgrade pip
+    pip install -r requirements.txt
+else
+    echo "❌ 错误：找不到虚拟环境"
+    exit 1
+fi
 
 # 启动后端服务
 echo "🚀 启动后端服务 (端口: ${BACKEND_PORT:-8865})..."
 python3 run.py &
 BACKEND_PID=$!
 
-cd ..
+# 返回项目根目录
+if [ -f "/.dockerenv" ] || [ -n "$DOCKER_ENV" ]; then
+    cd "$PROJECT_ROOT"
+else
+    cd ..
+fi
 
 # 安装前端依赖
 echo "📦 安装前端依赖..."
-cd frontend
+
+# 确保在正确的目录
+if [ -f "/.dockerenv" ] || [ -n "$DOCKER_ENV" ]; then
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+    cd "$PROJECT_ROOT/frontend"
+else
+    cd frontend
+fi
+
+echo "   当前目录: $(pwd)"
+echo "   检查package.json: $(ls -la package.json 2>/dev/null || echo '未找到')"
+
 npm install
 
 # 启动前端服务
